@@ -17,20 +17,38 @@
 ExtendedXP.Enable = 0
 
 #
-#    ExtendedXP.RareXPMultiplier
+#    ExtendedXP.RareXP.Enable
+#        Description: Enables the rare XP reward.
+#        Default:     0 - Disabled
+#                     1 - Enabled
+#
+
+ExtendedXP.RareXP.Enable = 0
+
+#
+#    ExtendedXP.RareXP.Multiplier
 #        Description: Sets the rare creature exp reward multiplier.
 #        Note: This multiplier is applied AFTER the server creature kill multiplier.
 #        Default:     3
 #
 
-ExtendedXP.RareXPMultiplier = 3
+ExtendedXP.RareXP.Multiplier = 3
 
 #
-#    ExtendedXP.AchievementXPPercent
+#    ExtendedXP.AchievementXP.Enable
+#        Description: Enables the achievement XP reward.
+#        Default:     0 - Disabled
+#                     1 - Enabled
+#
+
+ExtendedXP.AchievementXP.Enable = 0
+
+#
+#    ExtendedXP.AchievementXP.Percent
 #        Description: Sets the base XP percent rewarded for achievements.
 #        Note: This value is multiplied by the achievement points rewarded.
 #        For example: An achievement that rewards 10 points will rewards 15% exp (10 * 1.5).
 #        Default:     1.5
 #
 
-ExtendedXP.AchievementXPPercent = 1.5
+ExtendedXP.AchievementXP.Percent = 1.5

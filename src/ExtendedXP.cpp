@@ -7,6 +7,11 @@ void ExtendedXPPlayer::OnGiveXP(Player* player, uint32& amount, Unit* victim)
         return;
     }
 
+    if (!sConfigMgr->GetOption<bool>("ExtendedXP.RareXP.Enable", false))
+    {
+        return;
+    }
+
     if (!player)
     {
         return;
@@ -35,13 +40,18 @@ void ExtendedXPPlayer::OnGiveXP(Player* player, uint32& amount, Unit* victim)
         return;
     }
 
-    uint32 rareExpMulti = sConfigMgr->GetOption<uint32>("ExtendedXP.RareXPMultiplier", 3);
+    uint32 rareExpMulti = sConfigMgr->GetOption<uint32>("ExtendedXP.RareXP.Multiplier", 3);
     amount = amount * rareExpMulti;
 }
 
 void ExtendedXPPlayer::OnAchiComplete(Player* player, AchievementEntry const* achievement)
 {
     if (!sConfigMgr->GetOption<bool>("ExtendedXP.Enable", false))
+    {
+        return;
+    }
+
+    if (!sConfigMgr->GetOption<bool>("ExtendedXP.AchievementXP.Enable", false))
     {
         return;
     }
@@ -56,7 +66,7 @@ void ExtendedXPPlayer::OnAchiComplete(Player* player, AchievementEntry const* ac
         return;
     }
 
-    float expPercent = sConfigMgr->GetOption<float>("ExtendedXP.AchievementXPPercent", 1.5f);
+    float expPercent = sConfigMgr->GetOption<float>("ExtendedXP.AchievementXP.Percent", 1.5f);
     float expMultiplier = (expPercent * achievement->points) / 100;
     float xpMax = player->GetUInt32Value(PLAYER_NEXT_LEVEL_XP);
     float xpReward = xpMax * expMultiplier;
