@@ -1,4 +1,4 @@
-# Extended XP
+# ![Azeroth Core](https://i.imgur.com/fQwb8m3.png) Extended XP
 This module allows you to enable alternate ways of XP gain for players.
 
 This includes exp gains from:
