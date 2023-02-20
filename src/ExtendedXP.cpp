@@ -68,6 +68,13 @@ void ExtendedXPPlayer::OnAchiComplete(Player* player, AchievementEntry const* ac
 
     float expPercent = sConfigMgr->GetOption<float>("ExtendedXP.AchievementXP.Percent", 1.5f);
     float expMultiplier = (expPercent * achievement->points) / 100;
+
+    if (sConfigMgr->GetOption<bool>("ExtendedXP.AchievementXP.ScaleLevel", false))
+    {
+        auto pLevel = player->GetLevel();
+        expMultiplier = ((expMultiplier * 100.0f) * (1.0f - (pLevel / 100.0f))) / 100.0f;
+    }
+
     float xpMax = player->GetUInt32Value(PLAYER_NEXT_LEVEL_XP);
     float xpReward = xpMax * expMultiplier;
 

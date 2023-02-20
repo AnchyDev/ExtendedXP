@@ -52,3 +52,14 @@ ExtendedXP.AchievementXP.Enable = 0
 #
 
 ExtendedXP.AchievementXP.Percent = 1.5
+
+#
+#    ExtendedXP.AchievementXP.ScaleLevel
+#        Description: Enables achievement xp scaling based on players level.
+#        Note: If you were to receive 15% exp from achievement, it would be calculated as so:
+#              (15 * (1 - (level(60) / 100)) = 6% exp gain.
+#        Default:     0 - Disabled
+#                     1 - Enabled
+#
+
+ExtendedXP.AchievementXP.ScaleLevel = 0
