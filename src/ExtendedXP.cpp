@@ -41,6 +41,11 @@ void ExtendedXPPlayer::OnGiveXP(Player* player, uint32& amount, Unit* victim)
 
 void ExtendedXPPlayer::OnAchiComplete(Player* player, AchievementEntry const* achievement)
 {
+    if (!sConfigMgr->GetOption<bool>("ExtendedXP.Enable", false))
+    {
+        return;
+    }
+
     if (!player)
     {
         return;
