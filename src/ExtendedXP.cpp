@@ -1,6 +1,6 @@
 #include "ExtendedXP.h"
 
-void ExtendedXPPlayer::OnGiveXP(Player* player, uint32& amount, Unit* victim)
+void ExtendedXPPlayer::OnGiveXP(Player* player, uint32& amount, Unit* victim, uint8 /*xpSource*/)
 {
     if (!sConfigMgr->GetOption<bool>("ExtendedXP.Enable", false))
     {

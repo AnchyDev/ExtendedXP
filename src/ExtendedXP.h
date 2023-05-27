@@ -11,7 +11,7 @@ public:
     ExtendedXPPlayer() : PlayerScript("ExtendedXPPlayer") { }
 
 private:
-    void OnGiveXP(Player* /*player*/, uint32& /*amount*/, Unit* /*victim*/) override;
+    void OnGiveXP(Player* /*player*/, uint32& /*amount*/, Unit* /*victim*/, uint8 /*xpSource*/) override;
     void OnAchiComplete(Player* /*player*/, AchievementEntry const* /*achievement*/) override;
 };
 
